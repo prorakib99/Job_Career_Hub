@@ -1,10 +1,12 @@
+import CategoryList from "../CategoryList/CategoryList";
 import Hero from "../Hero/Hero";
 
 const HomePage = () => {
     return (
-        <div>
+        <>
             <Hero></Hero>
-        </div>
+            <CategoryList></CategoryList>
+        </>
     );
 };
 

@@ -1,18 +1,16 @@
-import { useLoaderData } from 'react-router-dom';
+import { useLoaderData, useParams } from 'react-router-dom';
 import calenderIcon from '../../assets/calendar.png';
 import emailIcon from '../../assets/email.png';
 import locationIcon from '../../assets/location2.png';
 import moneyIcon from '../../assets/money.png';
 import phoneIcon from '../../assets/phone.png';
 const JobDetails = () => {
-
-    const jobDetails = useLoaderData();
-    
-    const currentUrl = window.location.href;
-    const url = currentUrl.split('/');
-    const getId = parseInt(url[url.length - 1]);
-    const findJob = jobDetails.find(job => job.id === getId);
-    
+    const jobs = useLoaderData();
+    const {jobId} = useParams();
+    if (!Array.isArray(jobs)) {
+        return <div>Loading...</div>; // or handle the loading state in your preferred way
+      }
+    const findJob = jobs.find(job => job.id === parseInt(jobId));
     const {job_description, job_responsibility, educational_requirements, experiences, salary, job_title, contact_information} = findJob;
     return (
         <div className="container mx-auto px-8">

@@ -16,7 +16,7 @@ const Feature = ({feature}) => {
                     <p className="text-neutral-500 text-xl font-semibold">{location}</p>
                 </div>
                 <div className="mt-6 flex">
-                    <Link to={`/job/${id}`}><button className="focus:outline-0 px-[18px] py-[11px] text-white text-xl font-extrabold bg-gradient-to-r from-indigo-400 to-violet-500 rounded">View Details</button></Link>
+                    <Link to={`/job/${id}`}><p className="focus:outline-0 px-[18px] py-[11px] text-white text-xl font-extrabold bg-gradient-to-r from-indigo-400 to-violet-500 rounded">View Details</p></Link>
                 </div>
             </div>
         </>

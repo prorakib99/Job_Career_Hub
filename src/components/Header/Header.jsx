@@ -14,7 +14,7 @@ const Header = () => {
                         <Link to='/'><span className="text-neutral-500 text-base font-medium">Statistics</span></Link>
                     </div>
                     <div>
-                        <button className="px-7 py-[19px] bg-gradient-to-r from-indigo-400 to-violet-500 rounded-lg text-white text-xl font-extrabold">Start Applying</button>
+                        <button className="px-7 py-4 bg-gradient-to-r from-indigo-400 to-violet-500 rounded-lg text-white text-xl font-extrabold">Start Applying</button>
                     </div>
                 </div>
             </div>

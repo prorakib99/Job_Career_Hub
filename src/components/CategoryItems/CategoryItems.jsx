@@ -1,7 +1,6 @@
 
 
 const CategoryItems = ({item}) => {
-    console.log(item);
     const {logo, category_name, availability} = item
     return (
         <>

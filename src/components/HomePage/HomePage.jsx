@@ -1,4 +1,5 @@
 import CategoryList from "../CategoryList/CategoryList";
+import Featured from "../Featured/Featured";
 import Hero from "../Hero/Hero";
 
 const HomePage = () => {
@@ -6,6 +7,7 @@ const HomePage = () => {
         <>
             <Hero></Hero>
             <CategoryList></CategoryList>
+            <Featured></Featured>
         </>
     );
 };

@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
 import CategoryItems from "../CategoryItems/CategoryItems";
+import SubHeader from "../SubHeader/SubHeader";
 
 const CategoryList = () => {
     const [category, setCategory] = useState([]);
+    
     useEffect(() => {
         fetch('./data/categories.json')
         .then(res => res.json())
@@ -10,10 +12,7 @@ const CategoryList = () => {
     }, [])
     return (
         <div className="container mx-auto px-8">
-            <div className="pt-28 pb-8">
-                <h2 className="text-zinc-900 text-5xl font-extrabold text-center mb-4">Job Category List</h2>
-                <p className="text-center text-neutral-500 text-base font-medium leading-relaxed">Explore thousands of job opportunities with all the information you need. Its your future</p>
-            </div>
+            <SubHeader subTitle='Job Category List'></SubHeader>
             <div>
                 <div className="grid md:grid-cols-4 gap-6">
                     {

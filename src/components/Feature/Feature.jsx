@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-const Feature = ({feature, jobDetails}) => {
+const Feature = ({feature}) => {
     const {id, logo, job_title, company_name, remote_or_onsite, salary, location} = feature;
     return (
         <>
@@ -16,7 +16,7 @@ const Feature = ({feature, jobDetails}) => {
                     <p className="text-neutral-500 text-xl font-semibold">{location}</p>
                 </div>
                 <div className="mt-6 flex">
-                    <Link><button onClick={()=> jobDetails(id)} className="focus:outline-0 px-[18px] py-[11px] text-white text-xl font-extrabold bg-gradient-to-r from-indigo-400 to-violet-500 rounded">View Details</button></Link>
+                    <Link to={`/job/${id}`}><button className="focus:outline-0 px-[18px] py-[11px] text-white text-xl font-extrabold bg-gradient-to-r from-indigo-400 to-violet-500 rounded">View Details</button></Link>
                 </div>
             </div>
         </>

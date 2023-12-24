@@ -1,15 +1,15 @@
-import { useLoaderData, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import calenderIcon from '../../assets/calendar.png';
 import emailIcon from '../../assets/email.png';
 import locationIcon from '../../assets/location2.png';
 import moneyIcon from '../../assets/money.png';
 import phoneIcon from '../../assets/phone.png';
+import { useContext } from 'react';
+import { Jobs } from '../Layout/Home';
 const JobDetails = () => {
-    const jobs = useLoaderData();
+
     const {jobId} = useParams();
-    if (!Array.isArray(jobs)) {
-        return <div>Loading...</div>; // or handle the loading state in your preferred way
-      }
+    const jobs = useContext(Jobs);
     const findJob = jobs.find(job => job.id === parseInt(jobId));
     const {job_description, job_responsibility, educational_requirements, experiences, salary, job_title, contact_information} = findJob;
     return (

@@ -3,6 +3,7 @@ import Featured from "../Featured/Featured";
 import Hero from "../Hero/Hero";
 
 const HomePage = () => {
+
     return (
         <>
             <Hero></Hero>

@@ -1,9 +1,18 @@
 import { useContext } from "react";
 import { Jobs } from "../Layout/Home";
 import AppliedJob from "../AppliedJob/AppliedJob";
+import { getShoppingCart } from "../../utilities/fakedb";
 
 const Applied = () => {
-    const jobs = useContext(Jobs)
+    const jobs = useContext(Jobs);
+    const appliedJobId = getShoppingCart();
+
+    const appliedFinalJob = []
+    for(const appliedId in appliedJobId){
+        const jobId = appliedJobId[appliedId];
+        const appliedJob = jobs.find(job => job.id === jobId);
+        appliedFinalJob.push(appliedJob)
+    }
     return (
         <div className="container mx-auto px-8">
             <div className="mt-20">
@@ -16,7 +25,7 @@ const Applied = () => {
                 </div>
                     <div className="grid gap-6 mt-8">
                     {
-                        jobs.map(job => <AppliedJob key={job.id} job={job}></AppliedJob>)
+                        appliedFinalJob.map(job => <AppliedJob key={job.id} job={job}></AppliedJob>)
                     }
                     </div>
             </div>

@@ -1,4 +1,4 @@
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import calenderIcon from '../../assets/calendar.png';
 import emailIcon from '../../assets/email.png';
 import locationIcon from '../../assets/location2.png';
@@ -6,12 +6,13 @@ import moneyIcon from '../../assets/money.png';
 import phoneIcon from '../../assets/phone.png';
 import { useContext } from 'react';
 import { Jobs } from '../Layout/Home';
+import { addToDb } from '../../utilities/fakedb';
 const JobDetails = () => {
 
-    const {jobId} = useParams();
+    const { jobId } = useParams();
     const jobs = useContext(Jobs);
     const findJob = jobs.find(job => job.id === parseInt(jobId));
-    const {job_description, job_responsibility, educational_requirements, experiences, salary, job_title, contact_information} = findJob;
+    const { id, job_description, job_responsibility, educational_requirements, experiences, salary, job_title, contact_information } = findJob;
     return (
         <div className="container mx-auto px-8">
             <div className="mt-28 grid md:grid-cols-[2fr_1fr] gap-6">
@@ -61,7 +62,9 @@ const JobDetails = () => {
                             </div>
                         </div>
                     </div>
-                    <button className="w-full text-center text-white text-xl mt-6 font-extrabold bg-gradient-to-r from-indigo-400 to-violet-500 rounded-lg">Apply Now</button>
+                    <Link to='/applied-jobs'>
+                        <button onClick={() => addToDb(id)} className="w-full text-center text-white text-xl mt-6 font-extrabold bg-gradient-to-r from-indigo-400 to-violet-500 rounded-lg">Apply Now</button>
+                    </Link>
                 </div>
             </div>
         </div>

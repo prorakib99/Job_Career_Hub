@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
+import locationIcon from '../../assets/location2.png';
+import moneyIcon from '../../assets/money.png';
 
 const AppliedJob = ({ job }) => {
-    console.log(job);
     const {id, logo, job_title, company_name, remote_or_onsite, location, salary} = job;
     return (
         <div className="flex justify-between items-center rounded-lg border border-gray-200">
@@ -14,12 +15,12 @@ const AppliedJob = ({ job }) => {
                     <p className="text-neutral-500 mb-4 text-2xl font-semibold">{company_name}</p>
                     <button className="w-[100px] px-[19px] mb-6 py-[9px] rounded border border-indigo-400 text-indigo-400 text-base font-extrabold">{remote_or_onsite}</button>
                     <div className="flex gap-6">
-                        <div className="flex gap-2">
-                            <img src="" alt="" />
+                        <div className="flex items-center gap-2">
+                            <img src={locationIcon} alt="" />
                             <p className="text-neutral-500 text-xl font-semibold">{location}</p>
                         </div>
-                        <div className="flex gap-2">
-                            <img src="" alt="" />
+                        <div className="flex items-center gap-2">
+                            <img src={moneyIcon} alt="" />
                             <p className="text-neutral-500 text-xl font-semibold">Salary : {salary}</p>
                         </div>
                     </div>

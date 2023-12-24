@@ -1,17 +1,11 @@
-import { Outlet } from 'react-router-dom';
+import { Outlet, useLoaderData } from 'react-router-dom';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
-import { createContext, useEffect, useState } from 'react';
+import { createContext } from 'react';
 
 export const Jobs = createContext('Jobs')
 const Home = () => {
-    const [jobs, setJobs] = useState([]);
-
-    useEffect(() => {
-        fetch('./data/jobs.json')
-            .then(res => res.json())
-            .then(data => setJobs(data))
-    }, [])
+    const jobs = useLoaderData();
     return (
         <div>
             <Header></Header>

@@ -5,6 +5,7 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import Home from './components/Layout/Home.jsx'
 import HomePage from './components/HomePage/HomePage.jsx'
 import JobDetails from './components/JobDetails/JobDetails.jsx'
+import Applied from './components/Applied/Applied.jsx'
 
 const router = createBrowserRouter([
   {
@@ -18,6 +19,10 @@ const router = createBrowserRouter([
       {
         path: 'job/:jobId',
         element: <JobDetails></JobDetails>
+      },
+      {
+        path: 'applied-jobs',
+        element: <Applied></Applied>
       }
     ]
   }
